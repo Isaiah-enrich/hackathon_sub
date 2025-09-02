@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Page</title>
+    <link rel="stylesheet" href="style.css">
+    <title>Dashboard - EduSite</title>
+</head>
+<body>
+    <h2>Welcome, {{ username }}!</h2>
+    <form method="POST" action="/add_detail">
+        <textarea name="info" placeholder="Enter detail..." required></textarea><br>
+        <button type="submit">Add Detail</button>
+    </form>
+
+    <h3>Your Details</h3>
+    <ul>
+        {% for d in details %}
+            <li>{{ d.info }}</li>
+        {% endfor %}
+    </ul>
+    <a href="/logout">Logout</a>
+</body>
+</html>
